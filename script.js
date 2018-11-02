@@ -115,17 +115,34 @@ let cartas = [
 //});
 
 //Con un FOR
-for (let i = 0; i < cartas.length; i++) {
-    console.log(cartas[i].nombre);
-}
+//for (let i = 0; i < cartas.length; i++) {
+//    console.log(cartas[i].nombre);
+//}
 
-//Mostrar en la página web las 3 primeras cartas en un listado,mostrando el nombre y el daño como título y subtítulo,
-//la descripción como un párrafo y una imagen(la especificada en image_url como src).
+////Mostrar en la página web las 3 primeras cartas en un listado,mostrando el nombre y el daño como título y subtítulo,
+////la descripción como un párrafo y una imagen(la especificada en image_url como src).
+
+//let mostrarCartas = ""
+
+////Aqui se muestran las 3 primeras cartas
+//for (let i = 0; i < 3; i++) {
+//    mostrarCartas += "<h1>" + cartas[i].nombre + "</h1>" + "<h2>Ataque: " + cartas[i].attack + "<br>Defensa: " + cartas[i].defense + "</h2>" + "<p>Descripcion: " + cartas[i].description + "</p>" + "<img src=" + cartas[i].image + ">"
+//}
+
+////Aqui se muestran todas las cartas
+//cartas.forEach(function (carta) {
+//    mostrarCartas += "<h1>" + carta.nombre + "</h1>" + "<h2>Ataque: " + carta.attack + "<br>Defensa: " + carta.defense + "</h2>" + "<p>Descripcion: " + carta.description + "</p>" + "<img src=" + carta.image + ">"
+//});
+
+////Aqui imprime lo que se le ha pedido en en el FOR o en el FOREACH
+//document.getElementById("lista_cartas").innerHTML = mostrarCartas;
+
+//En vez de mostrar las 3 primeras cartas del array, mostrar 3 aleatorias(cada vez que se recarga la página debería mostrar 3 diferentes).
+
+let rnd = cartas[Math.floor(Math.random() * cartas.length)];
 
 let mostrarCartas = ""
-cartas.forEach(function (carta) {
-    mostrarCartas += "<h1>" + carta.nombre + "</h1>" + "<h2>Ataque: " + carta.attack + "<br>Defensa: " + carta.defense + "</h2>" + "<p>Descripcion: " + carta.description + "</p>" + "<img src=" + carta.image + ">"
-});
-
+for (let i = 0; i < 3; i++) {
+    mostrarCartas += "<h1>" + cartas[i].nombre + "</h1>" + "<h2>Ataque: " + cartas[i].attack + "<br>Defensa: " + cartas[i].defense + "</h2>" + "<p>Descripcion: " + cartas[i].description + "</p>" + "<img src=" + cartas[i].image + ">"
+}
 document.getElementById("lista_cartas").innerHTML = mostrarCartas;
-
