@@ -118,3 +118,14 @@ let cartas = [
 for (let i = 0; i < cartas.length; i++) {
     console.log(cartas[i].nombre);
 }
+
+//Mostrar en la página web las 3 primeras cartas en un listado,mostrando el nombre y el daño como título y subtítulo,
+//la descripción como un párrafo y una imagen(la especificada en image_url como src).
+
+let mostrarCartas = ""
+cartas.forEach(function (carta) {
+    mostrarCartas += "<h1>" + carta.nombre + "</h1>" + "<h2>Ataque: " + carta.attack + "<br>Defensa: " + carta.defense + "</h2>" + "<p>Descripcion: " + carta.description + "</p>" + "<img src=" + carta.image + ">"
+});
+
+document.getElementById("lista_cartas").innerHTML = mostrarCartas;
+
